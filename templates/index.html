@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Feedback App</title>
+</head>
+<body>
+    <h1>User Feedback App</h1>
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Feedback:</label><br>
+        <textarea name="message" required></textarea><br><br>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <hr>
+
+    <h2>Submitted Feedback</h2>
+
+    {% for feedback in feedbacks %}
+        <p><strong>{{ feedback.name }}</strong>: {{ feedback.message }}</p>
+    {% else %}
+        <p>No feedback submitted yet.</p>
+    {% endfor %}
+</body>
+</html>
